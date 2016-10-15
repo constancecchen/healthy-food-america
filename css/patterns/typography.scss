@@ -25,3 +25,11 @@ a {
   color: inherit;
   transition: color .2s ease-out;
 }
+
+.section-heading {
+  max-width: 20em;
+  margin: 0 auto 1em;
+  font-family: $font-body;
+  font-size: 1.9em;
+  letter-spacing: 0;
+}

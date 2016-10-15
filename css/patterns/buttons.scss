@@ -10,7 +10,7 @@ button, [type="submit"], [type="button"] {
 }
 
 .button {
-  transition: transform .2s cubic-bezier(.38, -1.04, 1, .72);
+  transition: transform .2s ease-out;
 
   &:focus {
     outline: 0;
@@ -32,6 +32,6 @@ button, [type="submit"], [type="button"] {
 
   &:hover,
   &:focus {
-    transform: rotate(-2deg);
+    transform: rotate(-3deg);
   }
 }
