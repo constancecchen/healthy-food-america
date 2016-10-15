@@ -5,6 +5,8 @@ $(document).ready(function() {
 	 */
 	var total = 0;
 	var pourPercent = 0;
+	var totalFilled = 0;
+	var totalFilledMax = 6;
 	var isPouring = false;
 	var pourTimer;
 	var gramsPerTeaspoon = 4.2;
@@ -71,13 +73,17 @@ $(document).ready(function() {
 
 					if(pourPercent < 100){
 						pourPercent++;
+					} else if (totalFilled < totalFilledMax){
+						totalFilled++;
+						pourPercent = 0;
 					} else {
-						pourTimer = false;
+						clearInterval(pourTimer);
 					}
 				}, 40);
+			
 			}
 		}
-	}
+	};
 
 	/**
 	 * Final grading math
@@ -86,8 +92,8 @@ $(document).ready(function() {
 		var maxScore = 100;
 		var percent = score / maxScore * 100;
 
-		var gradeArr = [60,70,80,90,95];
-		var rankArr = ["F for FAILURE","C","B","A","A+",];
+		var gradeArr = [50,90];
+		var rankArr = ["F for FAILURE","C","B"];
 
 		var curRank;
 
@@ -95,12 +101,8 @@ $(document).ready(function() {
 			curRank = rankArr[0];
 		} else if(percent <= gradeArr[1]){
 			curRank = rankArr[1];
-		} else if(percent <= gradeArr[2]){
-			curRank = rankArr[2];
-		} else if(percent <= gradeArr[3]){
-			curRank = rankArr[3];
 		} else {
-			curRank = rankArr[4];
+			curRank = rankArr[2];
 		}
 
 		return curRank;
@@ -109,16 +111,14 @@ $(document).ready(function() {
 	/**
 	 * Convert grams to teaspoons math
 	 */
-
 	var gramConverter = function(grams){
 		return Math.floor(grams / gramsPerTeaspoon);
 	};
 
 	/*
 	 * Demographic percentages
-	 * input total teaspoons
+	 * @param total teaspoons
 	 */
-
 	var getPercentages = function(teaspoons){
 
 		var childMax = 6;
@@ -129,5 +129,7 @@ $(document).ready(function() {
 		demograpics.child = Math.floor(teaspoons / childMax * 100);
 		demograpics.woman = Math.floor(teaspoons / womanMax * 100);
 		demograpics.man = Math.floor(teaspoons / manMax * 100);
+
+		return demographics;
 	};
 });
