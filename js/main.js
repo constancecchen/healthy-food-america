@@ -7,6 +7,7 @@ $(document).ready(function() {
 	var pourPercent = 0;
 	var isPouring = false;
 	var pourTimer;
+	var gramsPerTeaspoon = 4.2;
 
 	/**
 	 * Increment / decrement logic
@@ -105,4 +106,28 @@ $(document).ready(function() {
 		return curRank;
 	}
 
+	/**
+	 * Convert grams to teaspoons math
+	 */
+
+	var gramConverter = function(grams){
+		return Math.floor(grams / gramsPerTeaspoon);
+	};
+
+	/*
+	 * Demographic percentages
+	 * input total teaspoons
+	 */
+
+	var getPercentages = function(teaspoons){
+
+		var childMax = 6;
+		var womanMax = 6;
+		var manMax = 9;
+
+		var demograpics = {};
+		demograpics.child = Math.floor(teaspoons / childMax * 100);
+		demograpics.woman = Math.floor(teaspoons / womanMax * 100);
+		demograpics.man = Math.floor(teaspoons / manMax * 100);
+	};
 });
