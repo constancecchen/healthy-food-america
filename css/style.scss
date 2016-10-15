@@ -16,8 +16,9 @@
 /*----------------------------------------------
   Sections / specific one-offs
 -----------------------------------------------*/
+@import "sections/header";
 
 /*----------------------------------------------
   Utility classes
 -----------------------------------------------*/
-@import "base/normalize.scss";
+@import "base/utilities";
