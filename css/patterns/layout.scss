@@ -1,6 +1,6 @@
 /*----------------------------------------------
   Layout
-----------------------------------------------*/
+-----------------------------------------------*/
 .container {
   max-width: 64em;;
   padding: 0 1.5em;
@@ -15,12 +15,9 @@
   justify-content: center; // Horizontal centering
 }
 
-.flex-item {
-}
-
 /*----------------------------------------------
   Grid
-----------------------------------------------*/
+-----------------------------------------------*/
 $mq-xsmall: 28em;
 $mq-small:  45em;
 $mq-medium: 62em;
@@ -29,6 +26,8 @@ $mq-medium: 62em;
   flex: 0 0 100%;
   max-width: 100%;
   min-height: 15em; // TODO:
+  padding: 1em .5em;
+  box-sizing: border-box;
 
   @media (max-width: $mq-xsmall) {
     flex-basis: 100%;
@@ -70,4 +69,56 @@ $mq-medium: 62em;
       background-color: $color-secondary;
     }
   }
+}
+
+/*----------------------------------------------
+  Typography/visual
+-----------------------------------------------*/
+.food__name {
+  margin: 0 auto .5em;
+  font-family: $font-body;
+  font-size: 1.3em;
+  //color: $color-primary;
+}
+
+.food__image {
+  width: 70%;
+  height: auto;
+}
+
+.food__serving {
+  font-size: .9em;
+}
+
+/*----------------------------------------------
+  Adding/Subtracting quantity actions
+-----------------------------------------------*/
+.food__actions {
+  margin: .5em auto 0;
+}
+
+.food__action {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 .25em;
+  padding: .25em .75em .5em;
+  font-size: 1.1em;
+  line-height: 1;
+  color: $color-light;
+  background-color: $color-tertiary;
+  transition: transform .2s ease-out;
+
+  &:hover,
+  &:focus {
+    transform: scale(1.1);
+    outline: 0;
+  }
+}
+
+.food__quantity {
+  display: inline-block;
+  vertical-align: middle;
+  min-width: 1em;
+  font-family: $font-heading;
+  font-size: 1.2em;
 }
