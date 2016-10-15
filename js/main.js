@@ -1,3 +1,10 @@
+/*
+	var gridBox
+*/
+
+
+
+
 
 var foodArr = [];
 
@@ -73,3 +80,28 @@ foodArr.push({
 	serving: "1 355ml bottle",
 	sugar: 21
 });
+
+
+function gradeUser(score){
+	var maxScore = 100;
+	var percent = score / maxScore * 100;
+
+	var gradeArr = [60,70,80,90,95];
+	var rankArr = ["F for FAILURE","C","B","A","A+",];
+
+	var curRank;
+
+	if(percent <= gradeArr[0]){
+		curRank = rankArr[0];
+	} else if(percent <= gradeArr[1]){
+		curRank = rankArr[1];
+	} else if(percent <= gradeArr[2]){
+		curRank = rankArr[2];
+	} else if(percent <= gradeArr[3]){
+		curRank = rankArr[3];
+	} else {
+		curRank = rankArr[4];
+	}
+
+	return curRank;
+}
