@@ -1,35 +1,29 @@
 "use strict";
 
 var gulp = require("gulp"),
-    sass = require("gulp-sass"),
-    autoprefixer = require("gulp-autoprefixer");
+		sass = require("gulp-sass"),
+		autoprefixer = require("gulp-autoprefixer");
 
-/*
- |--------------------------------------------------------------------------
- | Compile & autoprefix CSS
- |--------------------------------------------------------------------------
- */
+/*----------------------------------------------
+  Compile & autoprefix CSS
+-----------------------------------------------*/
 gulp.task("css", function() {
-  return gulp.src("css/style.scss")
-    .pipe(sass({outputStyle: "compressed"}).on("error", sass.logError))
-    .pipe(autoprefixer({browsers: ["> 1%", "last 3 versions", "Firefox ESR"]}))
-    .pipe(gulp.dest("css/"));
+	return gulp.src("css/style.scss")
+		.pipe(sass({outputStyle: "compressed"}).on("error", sass.logError))
+		.pipe(autoprefixer({browsers: ["> 1%", "last 3 versions", "Firefox ESR"]}))
+		.pipe(gulp.dest("css/"));
 });
 
-/*
- |--------------------------------------------------------------------------
- | Concat + Uglify JS
- |--------------------------------------------------------------------------
- */
+/*----------------------------------------------
+  Concat + Uglify JS
+-----------------------------------------------*/
 gulp.task("js", function() {
-  // TODO:
+	// TODO:
 });
 
-/*
- |--------------------------------------------------------------------------
- | Watch style
- |--------------------------------------------------------------------------
- */
+/*----------------------------------------------
+  Watch
+-----------------------------------------------*/
 gulp.task("watch", function() {
-  gulp.watch("./css/**/*.scss", ["css"]);
+	gulp.watch("./css/**/*.scss", ["css"]);
 });
