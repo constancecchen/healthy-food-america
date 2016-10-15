@@ -13,8 +13,33 @@ var selections = [];
 var total = 0;
 
 $('.js-subtract').click(function(){
-	total -= $(this).closest(".js-food-item").data("value");
+	
+
+	var quantity = $(this).siblings(".js-quantity");
+	var num = parseInt(quantity.text());
+	if(num > 0){
+		quantity.text(--num);
+		total -= $(this).closest(".js-food-item").data("value");
+	}
+
 	console.log(total);
+});
+
+$('.js-add').click(function(){
+	
+
+	var quantity = $(this).siblings(".js-quantity");
+	var num = parseInt(quantity.text());
+	if(num < 10){
+		quantity.text(++num);
+		total += $(this).closest(".js-food-item").data("value");
+	}
+
+	console.log(total);
+});
+
+$(".js-estimate").click(function(){
+	alert("You filthy di-beetus!");
 });
 
 function pourHandler(){
