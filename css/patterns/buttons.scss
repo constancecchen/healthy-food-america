@@ -32,7 +32,6 @@ button, [type="submit"], [type="button"] {
 
   &:hover,
   &:focus {
-    background-color: $color-tertiary;
     transform: rotate(-2deg);
   }
 }

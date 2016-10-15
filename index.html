@@ -38,7 +38,7 @@
 				</h2>
 			</header>
 
-			<main>
+			<main class="js-main">
 				<!-- Food Grid -->
 				<div class="flex">
 
@@ -222,19 +222,27 @@
 				</section>
 			</main>
 
-			<section class="modal u-hidden js-estimate-modal">
+			<section class="modal u-hidden js-estimating">
 				<h2 class="final__heading" style="color: #fff;">
 					Stop pouring when you think you're at your estimate!
 				</h2>
 
 				<div class="animation-container container">
 					<div class="pouring-container"></div>
-					<div class="measuring-container"></div>
+					<div class="measuring-container">
+							<div class="sugar js-measuring-level"></div>
+					</div>
 				</div>
 
-				<button class="button button--big js-estimate">
+				<button class="button button--big js-estimate-stop">
 					Stop!
 				</button>
+			</section>
+
+			<section class="modal u-hidden js-sugar-reveal">
+				<h2 class="final__heading">
+					You were close!
+				</h2>
 			</section>
 
 			<!-- Page Footer -->

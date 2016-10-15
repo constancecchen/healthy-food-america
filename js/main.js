@@ -36,9 +36,22 @@ $('.js-add').click(function(){
 	console.log(total);
 });
 
+/**
+ * "Page" navigation
+ */
 $(".js-estimate").click(function(){
-	// alert(total);
-	$(".js-estimate-modal").removeClass('u-hidden');
+	console.log(total);
+
+	$(".js-main").hide();
+	$(".js-estimating").removeClass("u-hidden");
+	pourHandler();
+});
+
+$(".js-estimate-stop").click(function(){
+	pourHandler();
+
+	$(".js-estimating").hide();
+	$(".js-sugar-reveal").removeClass("u-hidden");
 });
 
 function pourHandler(){
@@ -50,13 +63,17 @@ function pourHandler(){
 			isPouring = true;
 
 			pourTimer = setInterval(function(){
-				
 				if(pourPercent < 100){
 					pourPercent++;
 				} else {
 					pourTimer = false;
 				}
-			},1000);
+
+				$(".js-measuring-level").css({
+					"transform": "scaleY(" + pourPercent / 100 + ")"
+				});
+
+			},40);
 		}
 	}
 }
