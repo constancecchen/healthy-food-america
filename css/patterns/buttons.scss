@@ -13,7 +13,26 @@ button, [type="submit"], [type="button"] {
   transition: transform .2s cubic-bezier(.38, -1.04, 1, .72);
 
   &:focus {
-    transform: scale(1.2);
     outline: 0;
+  }
+}
+
+.button--big {
+  display: block;
+  max-width: 15em;
+  margin: 0 auto;
+  padding: .5em 1em;
+  font-family: $font-heading;
+  font-size: 2em;
+  font-weight: 700;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  color: $color-light;
+  background-color: $color-primary;
+
+  &:hover,
+  &:focus {
+    background-color: $color-tertiary;
+    transform: rotate(-2deg);
   }
 }

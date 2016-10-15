@@ -37,7 +37,8 @@ $('.js-add').click(function(){
 });
 
 $(".js-estimate").click(function(){
-	alert("" + total);
+	// alert(total);
+	$(".js-estimate-modal").removeClass('u-hidden');
 });
 
 function pourHandler(){

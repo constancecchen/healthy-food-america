@@ -211,14 +211,29 @@
 					</article>
 
 				</div>
+
+				<section class="final">
+					<h2 class="final__heading">
+						How much sugar do you think your selection contains?
+					</h2>
+					<button class="button button--big js-estimate">
+						Estimate!
+					</button>
+				</section>
 			</main>
 
-			<section class="final">
-				<h2 class="final__heading">
-					How much sugar do you think your selection contains?
+			<section class="modal u-hidden js-estimate-modal">
+				<h2 class="final__heading" style="color: #fff;">
+					Stop pouring when you think you're at your estimate!
 				</h2>
-				<button class="final__button js-estimate">
-					Estimate!
+
+				<div class="animation-container container">
+					<div class="pouring-container"></div>
+					<div class="measuring-container"></div>
+				</div>
+
+				<button class="button button--big js-estimate">
+					Stop!
 				</button>
 			</section>
 
