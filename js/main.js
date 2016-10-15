@@ -43,7 +43,7 @@ $(".js-estimate").click(function(){
 	console.log(total);
 
 	$(".js-main").hide();
-	$(".js-estimating").removeClass("u-hidden");
+	$(".js-estimating").show();
 	pourHandler();
 });
 
@@ -51,7 +51,7 @@ $(".js-estimate-stop").click(function(){
 	pourHandler();
 
 	$(".js-estimating").hide();
-	$(".js-sugar-reveal").removeClass("u-hidden");
+	$(".js-sugar-reveal").show();
 });
 
 function pourHandler(){
