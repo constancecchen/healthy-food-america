@@ -7,10 +7,6 @@
   margin-right: auto;
   margin-left: auto;
 }
-
-/*----------------------------------------------
-  Grid
-----------------------------------------------*/
 .flex {
   display: flex;
   flex-wrap: wrap;
@@ -20,19 +16,19 @@
 }
 
 .flex-item {
-  flex: 0 0 100%;
-  max-width: 100%;
 }
 
 /*----------------------------------------------
-  Grid appearance
+  Grid
 ----------------------------------------------*/
 $mq-xsmall: 28em;
 $mq-small:  45em;
 $mq-medium: 62em;
 
-.flex-item {
-  min-height: 15em; // TEMP
+.food {
+  flex: 0 0 100%;
+  max-width: 100%;
+  min-height: 15em; // TODO:
 
   @media (max-width: $mq-xsmall) {
     flex-basis: 100%;
