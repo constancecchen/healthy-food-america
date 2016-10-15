@@ -14,7 +14,6 @@ var total = 0;
 
 $('.js-subtract').click(function(){
 	
-
 	var quantity = $(this).siblings(".js-quantity");
 	var num = parseInt(quantity.text());
 	if(num > 0){
@@ -27,7 +26,6 @@ $('.js-subtract').click(function(){
 
 $('.js-add').click(function(){
 	
-
 	var quantity = $(this).siblings(".js-quantity");
 	var num = parseInt(quantity.text());
 	if(num < 10){
@@ -39,7 +37,7 @@ $('.js-add').click(function(){
 });
 
 $(".js-estimate").click(function(){
-	alert("You filthy di-beetus!");
+	alert("" + total);
 });
 
 function pourHandler(){
