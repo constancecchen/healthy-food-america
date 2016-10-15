@@ -1,0 +1,22 @@
+/*----------------------------------------------
+  Baseline form element styling
+-----------------------------------------------*/
+input, textarea, select {
+  display: block; // Opinionated - can remove if necessary
+  max-width: 100%;
+  width: 100%;
+  padding: .2em 0;
+  font-family: $font-body;
+  line-height: inherit;
+  background-color: transparent;
+  border: 0;
+
+  &:focus {
+    outline: 0;
+  }
+}
+
+textarea {
+  min-height: 8em;
+  resize: vertical;
+}

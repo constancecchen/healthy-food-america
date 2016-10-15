@@ -1,0 +1,19 @@
+/*----------------------------------------------
+  Button styles
+-----------------------------------------------*/
+// Reset buttons to look like text links unless given a specific class
+button, [type="submit"], [type="button"] {
+  display: inline-block;
+  background-color: transparent;
+  border: 0;
+  padding: 0;
+}
+
+.button {
+  transition: transform .2s cubic-bezier(.38, -1.04, 1, .72);
+
+  &:focus {
+    transform: scale(1.2);
+    outline: 0;
+  }
+}
