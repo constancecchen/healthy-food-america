@@ -37,7 +37,10 @@ $(document).ready(function() {
 	$(".js-estimate").click(function(){
 		$(".js-main").hide();
 		$(".js-estimating").show();
-		pourHandler();
+
+		setTimeout(function() {
+			pourHandler();
+		}, 500);
 	});
 
 	$(".js-estimate-stop").click(function(){
@@ -46,7 +49,7 @@ $(document).ready(function() {
 		setTimeout(function() {
 			$(".js-estimating").hide();
 			$(".js-sugar-reveal").show();
-	  }, 500);
+		}, 500);
 	});
 
 	/**
