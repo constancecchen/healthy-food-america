@@ -1,11 +1,14 @@
 /*
-	var gridBox
+	var gridBox = $("#js-foodContainer");
+
+	var estimate = $("#estimateButton");
 */
 
+var pourPercent = 0;
+var isPouring = false;
+var pourTimer;
 
-
-
-
+var selections = [];
 var foodArr = [];
 
 foodArr.push({
@@ -81,7 +84,25 @@ foodArr.push({
 	sugar: 21
 });
 
+	if(isPouring){
+		isPouring = false;
+		clearInterval(pourTimer);
+	} else {
+		if(pourPercent < 100){
+			isPouring = true;
 
+			pourTimer = setInterval(function(){
+				
+				if(pourPercent < 100){
+					pourPercent++;
+				} else {
+					pourTimer = false;
+				}
+			},1000);
+		}
+	}
+}
+    
 function gradeUser(score){
 	var maxScore = 100;
 	var percent = score / maxScore * 100;
