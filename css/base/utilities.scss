@@ -1,0 +1,78 @@
+/*----------------------------------------------
+  Utility helper classes
+-----------------------------------------------*/
+
+/*----------------------------------------------
+  Positioning/Floating
+-----------------------------------------------*/
+.u-clearfix {
+  &::after {
+    display: table;
+    clear: both;
+    content: "";
+  }
+}
+.u-float-right {
+  float: right;
+}
+.u-float-left {
+  float: left;
+}
+.u-float-none {
+  float: none;
+}
+
+/*----------------------------------------------
+  Hiding
+-----------------------------------------------*/
+.u-display-none {
+  display: none;
+}
+.u-hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+.u-off-screen {
+  display: inline-block;
+  max-width: 100%;
+  width: 0;
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.u-uninteractable {
+  pointer-events: none;
+}
+
+/*----------------------------------------------
+  Text alignment
+-----------------------------------------------*/
+.u-align-center {
+  text-align: center;
+}
+.u-align-right {
+  text-align: right;
+}
+.u-align-left {
+  text-align: left;
+}
+
+/*----------------------------------------------
+  Typography helpers
+-----------------------------------------------*/
+// This turns text into a single line and adds an ellipsis to the end if needed
+.u-ellipsis {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+// Word breaks/wraps, adding hyphens in supporting browsers
+.u-hyphenate {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+}

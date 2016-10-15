@@ -1,0 +1,25 @@
+/*----------------------------------------------
+  Base color variables
+-----------------------------------------------*/
+// Accent colors
+$color-primary:   #db443b; // Red
+$color-secondary: #ebdd38; // Yellow
+$color-tertiary:  #00a79d; // Teal
+
+// Monochromatic colors
+$color-dark:  #000;
+$color-light: #fff;
+
+// Third party brand colors
+$color-twitter:   #55acee;
+$color-facebook:  #3b5999;
+$color-pinterest: #bd081c;
+$color-instagram: #e4405f;
+
+/*----------------------------------------------
+  Optionally customize selection color
+-----------------------------------------------*/
+::selection {
+  color: $color-light;
+  background-color: $color-tertiary;
+}

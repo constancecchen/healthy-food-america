@@ -1,0 +1,39 @@
+/*----------------------------------------------
+  Layout
+----------------------------------------------*/
+.container {
+  max-width: 64em;;
+  padding: 0 1.5em;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/*----------------------------------------------
+  Grid
+----------------------------------------------*/
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  align-items: center; // Vertical centering
+  justify-content: center; // Horizontal centering
+}
+
+.flex-item {
+  flex: 1 1 30em;
+  max-width: 100%;
+}
+
+/*----------------------------------------------
+  Helper classes for vertically aligning cells
+  (Overrides parent alignment)
+-----------------------------------------------*/
+.flex-item--top {
+  align-self: flex-start;
+}
+.flex-item--bottom {
+  align-self: flex-end;
+}
+.flex-item--middle {
+  align-self: center;
+}
