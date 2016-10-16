@@ -64,9 +64,9 @@ $(document).ready(function() {
 
 	$(".js-estimate-stop").click(function(){
 		pourHandler();
+		$(".pouring-container").removeClass("is-pouring");
 
 		$(".js-result-message").text(gradeUser(totalPour));
-
 		$(".js-user-total").text(totalPour);
 		$(".js-actual-total").text(gramConverter(totalGrams));
 
@@ -79,7 +79,7 @@ $(document).ready(function() {
 			$(".js-estimating").hide();
 			$(".js-sugar-reveal").show();
 			window.scrollTo(0, 0);
-		}, 500);
+		}, 600);
 	});
 
 	/**
