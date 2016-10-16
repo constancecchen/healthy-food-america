@@ -94,7 +94,7 @@
 							Soda
 						</h2>
 						<div class="food__serving js-serving-size">1 can</div>
-						<img class="food__image" src="images/cupcake.png" width="150" height="150" alt="">
+						<img class="food__image" src="images/soda.png" width="150" height="150" alt="">
 
 						<div class="food__actions">
 							<button class="food__action js-subtract" aria-label="Subtract" title="Subtract"> - </button>
@@ -216,6 +216,9 @@
 					</article>
 
 				</div>
+				<div class="disclaimer-text">
+					Sugar data from Fooducate
+				</div>
 
 				<section class="estimate-cta">
 					<h2 class="section-heading">
@@ -235,7 +238,7 @@
 				<div class="animation-container container">
 					<div class="pouring-container"></div>
 					<div class="measuring-container">
-							<div class="sugar js-measuring-level"></div>
+							<div class=	"sugar js-measuring-level"></div>
 					</div>
 
 					<button class="stop-button button button--big js-estimate-stop">
@@ -248,6 +251,65 @@
 				<h2 class="section-heading">
 					Results
 				</h2>
+
+				<div class="sugar-count u-clearfix">
+					<div class="user-total results-column">
+						<h3 class="sugar-count__heading">
+							You guessed:
+						</h3>
+						<span class="sugar-count__teaspoons">1</span> teaspoons
+					</div>
+					<div class="actual-total results-column">
+						<h3 class="sugar-count__heading">
+							Actual sugar value:
+						</h3>
+						<span class="sugar-count__teaspoons">999</span> teaspoons
+					</div>
+					<div class="recommended-total results-column">
+						<h3 class="sugar-count__heading">
+							Recommended daily intake:
+						</h3>
+						<span class="sugar-count__teaspoons">12</span> teaspoons
+					</div>
+				</div>
+				<div class="disclaimer-text">
+					Recommended by The Dietary Guidelines for Americans
+				</div>
+
+				<h2 class="section-heading">
+					What was the actual daily intake?
+				</h2>
+
+				<div class="daily-intake u-clearfix">
+					<div class="child results-column">
+						<h3 class="daily-intake__heading">150<small>%</small></h3>
+						Max <strong>6</strong> teaspoons per day
+						<img class="daily-intake__silhouette" src="images/child.png" width="400" height="600" alt="">
+						<div>
+							Child
+						</div>
+					</div>
+					<div class="woman results-column">
+						<h3 class="daily-intake__heading">150<small>%</small></h3>
+						Max <strong>6</strong> teaspoons per day
+						<img class="daily-intake__silhouette" src="images/woman.png" width="400" height="600" alt="">
+						<div>
+							Woman
+						</div>
+					</div>
+					<div class="man results-column">
+						<h3 class="daily-intake__heading">100<small>%</small></h3>
+						Max <strong>9</strong> teaspoons per day
+						<img class="daily-intake__silhouette" src="images/man.png" width="400" height="600" alt="">
+						<div>
+							Man
+						</div>
+					</div>
+				</div>
+				<div class="disclaimer-text">
+					Recommended by American Heart Association
+				</div>
+
 			</section>
 
 			<!-- Page Footer -->
@@ -259,14 +321,5 @@
 		<!-- JavaScript -->
 		<script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
 		<script src="js/main.js" defer></script>
-
-		<!-- Google Analytics
-		<script>
-		window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-		ga('create', 'UA-74090874-1', 'auto');
-		ga('send', 'pageview');
-		</script>
-		<script src='//www.google-analytics.com/analytics.js' defer></script>
-		-->
 	</body>
 </html>

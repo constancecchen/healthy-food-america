@@ -1,0 +1,73 @@
+/*----------------------------------------------
+  Results page
+-----------------------------------------------*/
+.results-column {
+  float: left;
+  width: 33.333333%;
+  padding: 1.5em 1em;
+}
+
+/*----------------------------------------------
+  Absolute values
+-----------------------------------------------*/
+.user-total {
+  padding-bottom: 3em;
+  color: $color-light;
+  background-color: $color-primary;
+}
+.actual-total {
+  padding-bottom: 3em;
+  color: $color-light;
+  background-color: darken($color-primary, 5%);
+}
+.recommended-total {
+  padding-bottom: 3em;
+  color: $color-light;
+  background-color: darken($color-primary, 10%);
+}
+
+.sugar-count__heading {
+  font-family: $font-body;
+  margin: .5em auto;
+  min-height: 3em;
+}
+
+.sugar-count__teaspoons {
+  display: block;
+  font-family: $font-heading;
+  font-size: 6em;
+  font-weight: 700;
+  letter-spacing: .05em;
+  line-height: 1;
+}
+
+/*----------------------------------------------
+  Percent values
+-----------------------------------------------*/
+.child {
+  color: $color-light;
+  background-color: $color-tertiary;
+}
+
+.woman {
+  color: $color-light;
+  background-color: darken($color-tertiary, 5%);
+}
+
+.man {
+  color: $color-light;
+  background-color: darken($color-tertiary, 10%);
+}
+
+.daily-intake__heading {
+  margin: 0 auto;
+  font-size: 4em;
+  line-height: 1;
+}
+
+.daily-intake__silhouette {
+  display: block;
+  width: 70%;
+  margin: 1.5em auto 1em;
+  height: auto;
+}

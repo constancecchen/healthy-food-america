@@ -18,7 +18,6 @@ $mq-grid-large:  64em;
   max-width: 100%;
   min-height: 15em;
   padding: 1.5em .75em;
-  box-sizing: border-box;
 
   @media (max-width: $mq-grid-small) {
     &:nth-child(odd) {
