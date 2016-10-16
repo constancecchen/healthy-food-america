@@ -94,11 +94,10 @@ $(document).ready(function() {
 						"transform": "scaleY(" + curPour / maxPour + ")"
 					});
 
-					$(".js-measuring-quantity").text(totalPour);
-
 					if(curPour < maxPour){
 						curPour++;
 						totalPour++;
+						$(".js-measuring-quantity").text(totalPour);
 					} else if (totalFilled < totalFilledMax){
 						totalFilled++;
 						curPour = 0;
