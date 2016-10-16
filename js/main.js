@@ -57,6 +57,9 @@ $(document).ready(function() {
 
 		$(this).hide();
 		$(".js-estimate-stop").show();
+		$(".section-heading").hide("200")
+		$(".pouring-container").show("300");
+		$(".measuring-container").show("300");
 		$(".pouring-container").addClass("is-pouring");
 	});
 
