@@ -94,9 +94,7 @@ $(document).ready(function() {
 				isPouring = true;
 
 				pourTimer = setInterval(function(){
-					$(".js-measuring-level").css({
-						"transform": "scaleY(" + curPour / maxPour + ")"
-					});
+					$(".js-measuring-level").height(curPour / maxPour * 100 + "%");
 
 					if(curPour < maxPour){
 						curPour++;
