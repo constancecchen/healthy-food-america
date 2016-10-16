@@ -1,11 +1,17 @@
 /*----------------------------------------------
-  Estimate CTA
+  Estimate animation / game setup
 -----------------------------------------------*/
-.estimate-cta {
-  margin: 3em auto;
+.animation-container {
+  position: relative;
+  height: 35.5em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  background-color: $color-tertiary;
+  overflow: hidden;
 }
 
 .start-stop-button {
+  z-index: 3;
   position: absolute;
   top: 1em;
   left: 50%;
@@ -18,16 +24,21 @@
   }
 }
 
-/*----------------------------------------------
-  Pouring animation
------------------------------------------------*/
-.animation-container {
-  position: relative;
-  height: 35.5em;
-  margin-top: 1em;
-  margin-bottom: 1em;
-  background: $color-tertiary;
-  overflow: hidden;
+.game-explanation {
+  z-index: 2;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: $color-tertiary;
+
+  .section-heading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+  }
 }
 
 /*----------------------------------------------
