@@ -1,6 +1,12 @@
 /*----------------------------------------------
   Header
 -----------------------------------------------*/
+header {
+  float: none;
+  max-width: 100%;
+  padding: .5em 0 0;
+}
+
 .page-heading {
   margin: .5em auto .1em;
   font-size: 3.5em;
