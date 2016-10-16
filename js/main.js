@@ -8,7 +8,7 @@ $(document).ready(function() {
 	var totalPour = 0;
 	var maxPour = 12;
 	var totalFilled = 0;
-	var totalFilledMax = 6;
+	var totalFilledMax = 40;
 	var isPouring = false;
 	var pourTimer;
 	var gramsPerTeaspoon = 4.2;
