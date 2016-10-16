@@ -30,33 +30,83 @@
   overflow: hidden;
 }
 
+/*----------------------------------------------
+  Pouring sugar container
+-----------------------------------------------*/
 .pouring-container {
   width: 10em;
   height: 11em;
   margin: 7em auto 0;
   background-color: $color-light;
-  transform: translateX(12em) rotate(-35deg);
-  transition: transform .3s ease-out;
+  border-radius: 0 5px 5px 5px;
+  transform: translateY(14.5em) translateX(18em);
+  transform-origin: top right;
+  transition: transform .4s ease-out;
 
+  // Triangle corner
   &::before {
     position: absolute;
     top: 0;
     left: -1.9em;
-    content: "";
     width: 0;
     height: 0;
+    content: "";
     border-top: 2em solid $color-light;
     border-left: 2em solid transparent;
   }
+
+  // Falling sugar stream
+  &::after {
+    position: absolute;
+    top: .2em;
+    left: -1.9em;
+    content: "";
+    width: .5em;
+    height: 17.8em;
+    background-color: $color-light;
+    transform: rotate(40deg) scaleY(0);
+    transform-origin: top;
+    transition: .75s transform .2s ease-out;
+  }
+
+  &.is-pouring {
+    transform: translateX(8em) rotate(-40deg);
+
+    &::after {
+      transform: rotate(40deg) scaleY(1);
+    }
+  }
 }
 
+.sugar-label {
+  position: absolute;
+  top: 55%;
+  left: 0;
+  right: 0;
+  padding: .2em auto;
+  font-family: $font-heading;
+  font-size: 2em;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  color: $color-light;
+  background-color: $color-primary;
+  border: 1px solid $color-secondary;
+  border-width: .2em 0;
+  transform: translateY(-50%);
+}
+
+/*----------------------------------------------
+  Receiving sugar container
+-----------------------------------------------*/
 .measuring-container {
+  z-index: 1;
   position: relative;
   width: 13em;
   height: 14em;
   margin: .5em auto 0;
   background-color: rgba($color-light, .5);
-  transition: transform .3s ease-out;
+  border-radius: 0 0 2em 2em;
+  overflow: hidden;
 }
 
 .sugar {
@@ -67,6 +117,7 @@
   transform: scaleY(0);
   transform-origin: bottom;
   transition: transform .3s ease-out;
+  will-change: transform;
 }
 
 .sugar-quantity {

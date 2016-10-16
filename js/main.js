@@ -49,6 +49,7 @@ $(document).ready(function() {
 
 		$(".js-main").hide();
 		$(".js-estimating").show();
+		window.scrollTo(0, 0);
 	});
 
 	$(".js-estimate-start").click(function(){
@@ -56,15 +57,11 @@ $(document).ready(function() {
 
 		$(this).hide();
 		$(".js-estimate-stop").show();
+		$(".pouring-container").addClass("is-pouring");
 	});
 
 	$(".js-estimate-stop").click(function(){
 		pourHandler();
-
-		setTimeout(function() {
-			$(".js-estimating").hide();
-			$(".js-sugar-reveal").show();
-		}, 500);
 
 		$(".js-user-total").text(totalPour);
 		$(".js-actual-total").text(gramConverter(totalGrams));
@@ -73,6 +70,12 @@ $(document).ready(function() {
 		$(".js-child-intake").text(demographics.children);
 		$(".js-woman-intake").text(demographics.women);
 		$(".js-man-intake").text(demographics.men);
+
+		setTimeout(function() {
+			$(".js-estimating").hide();
+			$(".js-sugar-reveal").show();
+			window.scrollTo(0, 0);
+		}, 500);
 	});
 
 	/**
