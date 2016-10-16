@@ -66,7 +66,7 @@
     background-color: $color-light;
     transform: rotate(40deg) scaleY(0);
     transform-origin: top;
-    transition: .75s transform .2s ease-out;
+    transition: .5s transform .4s ease-in;
   }
 
   &.is-pouring {
