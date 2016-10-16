@@ -4,8 +4,8 @@ $(document).ready(function() {
 	 * Set up
 	 */
 	var totalGrams = 0;
-	var curPour = 0;//Animation variable
-	var maxPour = 12;//Animation variable
+	var curPour = 0; //Animation variable
+	var maxPour = 12; //Animation variable
 	var totalPour = 0;
 	var totalFilled = 0;
 	var totalFilledMax = 40;
@@ -16,21 +16,19 @@ $(document).ready(function() {
 	/**
 	 * Increment / decrement logic
 	 */
-	$('.js-subtract').click(function(){
-
+	$(".js-subtract").click(function() {
 		var quantity = $(this).siblings(".js-quantity");
 		var num = parseInt(quantity.text());
-		if(num > 0){
+		if (num > 0) {
 			quantity.text(--num);
 			totalGrams -= $(this).closest(".js-food-item").data("value");
 		}
 	});
 
-	$('.js-add').click(function(){
-
+	$(".js-add").click(function() {
 		var quantity = $(this).siblings(".js-quantity");
 		var num = parseInt(quantity.text());
-		if(num < 10){
+		if (num < 10) {
 			quantity.text(++num);
 			totalGrams += $(this).closest(".js-food-item").data("value");
 		}
@@ -39,9 +37,9 @@ $(document).ready(function() {
 	/**
 	 * "Page" navigation
 	 */
-	$(".js-estimate").click(function(){
+	$(".js-estimate").click(function() {
 		if (totalGrams <= 0) {
-			$(".js-estimate-error").slideDown('fast');
+			$(".js-estimate-error").slideDown("fast");
 			return;
 		} else {
 			$(".js-estimate-error").hide();
@@ -52,7 +50,7 @@ $(document).ready(function() {
 		window.scrollTo(0, $("#sugar-calculator").offset().top);
 	});
 
-	$(".js-estimate-start").click(function(){
+	$(".js-estimate-start").click(function() {
 		pourHandler();
 
 		$(this).hide();
@@ -62,7 +60,7 @@ $(document).ready(function() {
 		});
 	});
 
-	$(".js-estimate-stop").click(function(){
+	$(".js-estimate-stop").click(function() {
 		pourHandler();
 		$(".pouring-container").removeClass("is-pouring");
 
@@ -82,25 +80,47 @@ $(document).ready(function() {
 		}, 600);
 	});
 
+	$(".js-restart").click(function(event) {
+		event.preventDefault();
+
+		// Reset vars
+		totalGrams = 0;
+		curPour = 0;
+		totalPour = 0;
+		totalFilled = 0;
+		isPouring = false;
+
+		// Reset various DOM elements
+		$(".js-quantity, .js-measuring-quantity").text("0");
+		$(".js-measuring-level").height(0);
+		$(".js-estimate-stop").hide();
+		$(".js-estimate-start").show();
+
+		// Back to the main page
+		$(".js-sugar-reveal").hide();
+		$(".js-main").show();
+		window.scrollTo(0, 0);
+	});
+
 	/**
 	 * Pouring logic
 	 */
-	var pourHandler = function(){
-		if(isPouring){
+	var pourHandler = function() {
+		if (isPouring) {
 			isPouring = false;
 			clearInterval(pourTimer);
 		} else {
-			if(curPour < maxPour){
+			if (curPour < maxPour) {
 				isPouring = true;
 
-				pourTimer = setInterval(function(){
+				pourTimer = setInterval(function() {
 					$(".js-measuring-level").height(curPour / maxPour * 100 + "%");
 
-					if(curPour < maxPour){
+					if (curPour < maxPour) {
 						curPour++;
 						totalPour++;
 						$(".js-measuring-quantity").text(totalPour);
-					} else if (totalFilled < totalFilledMax){
+					} else if (totalFilled < totalFilledMax) {
 						totalFilled++;
 						curPour = 0;
 					} else {
@@ -114,16 +134,15 @@ $(document).ready(function() {
 	/**
 	 * Convert grams to teaspoons math
 	 */
-	var gramConverter = function(grams){
-		return Math.floor(grams / gramsPerTeaspoon);
+	var gramConverter = function(grams) {
+		return Math.round(grams / gramsPerTeaspoon);
 	};
 
 	/**
 	 * Demographic percentages
 	 * @param total teaspoons
 	 */
-	var getPercentages = function(teaspoons){
-
+	var getPercentages = function(teaspoons) {
 		var childrenMax = 6;
 		var womenMax = 6;
 		var menMax = 9;
@@ -139,8 +158,7 @@ $(document).ready(function() {
 	/**
 	 * Final grading math
 	 */
-	var gradeUser = function(guess){
-		
+	var gradeUser = function(guess) {
 		var actual = gramConverter(totalGrams);
 		var rankArr = ["Surprised?", "Good guess!", "Super close!", "You got it!"];
 		var message;
@@ -157,4 +175,5 @@ $(document).ready(function() {
 
 		return message;
 	}
+
 });
