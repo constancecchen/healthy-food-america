@@ -9,7 +9,7 @@ button, [type="submit"], [type="button"] {
   padding: 0;
 }
 
-.button {
+.game-cta-button { // .button already exists in HFA's theme, so let's make ours a bit more specific
   display: inline-block;
   max-width: 15em;
   margin: 0 auto;
