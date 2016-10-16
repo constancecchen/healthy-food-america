@@ -115,7 +115,7 @@ $(document).ready(function() {
 	 * Convert grams to teaspoons math
 	 */
 	var gramConverter = function(grams){
-		return Math.floor(grams / gramsPerTeaspoon);
+		return Math.round(grams / gramsPerTeaspoon);
 	};
 
 	/**
