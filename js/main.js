@@ -49,7 +49,7 @@ $(document).ready(function() {
 
 		$(".js-main").hide();
 		$(".js-estimating").show();
-		window.scrollTo(0, 0);
+		window.scrollTo(0, $("#sugar-calculator").offset().top);
 	});
 
 	$(".js-estimate-start").click(function(){
@@ -78,7 +78,7 @@ $(document).ready(function() {
 		setTimeout(function() {
 			$(".js-estimating").hide();
 			$(".js-sugar-reveal").show();
-			window.scrollTo(0, 0);
+			window.scrollTo(0, $("#sugar-calculator").offset().top);
 		}, 600);
 	});
 
