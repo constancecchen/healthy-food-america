@@ -3,7 +3,7 @@ $(document).ready(function() {
 	/**
 	 * Set up
 	 */
-	var total = 0;
+	var totalGrams = 0;
 	var pourPercent = 0;
 	var totalFilled = 0;
 	var totalFilledMax = 6;
@@ -20,7 +20,7 @@ $(document).ready(function() {
 		var num = parseInt(quantity.text());
 		if(num > 0){
 			quantity.text(--num);
-			total -= $(this).closest(".js-food-item").data("value");
+			totalGrams -= $(this).closest(".js-food-item").data("value");
 		}
 	});
 
@@ -30,7 +30,7 @@ $(document).ready(function() {
 		var num = parseInt(quantity.text());
 		if(num < 10){
 			quantity.text(++num);
-			total += $(this).closest(".js-food-item").data("value");
+			totalGrams += $(this).closest(".js-food-item").data("value");
 		}
 	});
 
@@ -53,6 +53,14 @@ $(document).ready(function() {
 			$(".js-estimating").hide();
 			$(".js-sugar-reveal").show();
 		}, 500);
+
+		$(".js-user-total").text(gramConverter((pourPercent * 3.4) + (totalFilled * 340)));
+		$(".js-actual-total").text(gramConverter(totalGrams));
+
+		var demographics = getPercentages(gramConverter(totalGrams));
+		$(".js-child-intake").text(demographics.children);
+		$(".js-woman-intake").text(demographics.women);
+		$(".js-man-intake").text(demographics.men);
 	});
 
 	/**
@@ -76,11 +84,12 @@ $(document).ready(function() {
 					} else if (totalFilled < totalFilledMax){
 						totalFilled++;
 						pourPercent = 0;
+
+						//update beaker number shown each time beaker is filled
 					} else {
 						clearInterval(pourTimer);
 					}
-				}, 40);
-			
+				}, 250);
 			}
 		}
 	};
@@ -121,14 +130,14 @@ $(document).ready(function() {
 	 */
 	var getPercentages = function(teaspoons){
 
-		var childMax = 6;
-		var womanMax = 6;
-		var manMax = 9;
+		var childrenMax = 6;
+		var womenMax = 6;
+		var menMax = 9;
 
-		var demograpics = {};
-		demograpics.child = Math.floor(teaspoons / childMax * 100);
-		demograpics.woman = Math.floor(teaspoons / womanMax * 100);
-		demograpics.man = Math.floor(teaspoons / manMax * 100);
+		var demographics = {};
+		demographics.children = Math.floor(teaspoons / childrenMax * 100);
+		demographics.women = Math.floor(teaspoons / womenMax * 100);
+		demographics.men = Math.floor(teaspoons / menMax * 100);
 
 		return demographics;
 	};
