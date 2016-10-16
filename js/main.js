@@ -108,29 +108,6 @@ $(document).ready(function() {
 	};
 
 	/**
-	 * Final grading math
-	 */
-	var gradeUser = function(score){
-		var maxScore = 100;
-		var percent = score / maxScore * 100;
-
-		var gradeArr = [50,90];
-		var rankArr = ["F for FAILURE","C","B"];
-
-		var curRank;
-
-		if(percent <= gradeArr[0]){
-			curRank = rankArr[0];
-		} else if(percent <= gradeArr[1]){
-			curRank = rankArr[1];
-		} else {
-			curRank = rankArr[2];
-		}
-
-		return curRank;
-	}
-
-	/**
 	 * Convert grams to teaspoons math
 	 */
 	var gramConverter = function(grams){
