@@ -16,6 +16,7 @@ button, [type="submit"], [type="button"] {
   padding: .5em 1em;
   font-family: $font-heading;
   font-size: 2em;
+  font-style: normal; // HFA override
   font-weight: 700;
   letter-spacing: .05em;
   text-transform: uppercase;
