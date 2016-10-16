@@ -10,15 +10,7 @@ button, [type="submit"], [type="button"] {
 }
 
 .button {
-  transition: transform .2s ease-out;
-
-  &:focus {
-    outline: 0;
-  }
-}
-
-.button--big {
-  display: block;
+  display: inline-block;
   max-width: 15em;
   margin: 0 auto;
   padding: .5em 1em;
@@ -29,9 +21,11 @@ button, [type="submit"], [type="button"] {
   text-transform: uppercase;
   color: $color-light;
   background-color: $color-primary;
+  transition: transform .2s ease-out;
 
   &:hover,
   &:focus {
     transform: rotate(-3deg);
+    outline: 0;
   }
 }
