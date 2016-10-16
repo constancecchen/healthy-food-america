@@ -5,6 +5,19 @@
   margin: 3em auto;
 }
 
+.start-stop-button {
+  position: absolute;
+  top: 1em;
+  left: 50%;
+  width: 5em;
+  transform: translateX(-50%);
+
+  &:hover,
+  &:focus {
+    transform: translateX(-50%) rotate(-3deg);
+  }
+}
+
 /*----------------------------------------------
   Pouring animation
 -----------------------------------------------*/
@@ -38,6 +51,7 @@
 }
 
 .measuring-container {
+  position: relative;
   width: 13em;
   height: 14em;
   margin: .5em auto 0;
@@ -52,17 +66,24 @@
   background-color: $color-light;
   transform: scaleY(0);
   transform-origin: bottom;
+  transition: transform .3s ease-out;
 }
 
-.start-stop-button {
+.sugar-quantity {
   position: absolute;
-  top: 1em;
+  top: 50%;
   left: 50%;
-  width: 5em;
-  transform: translateX(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  color: $color-dark;
+  font-weight: 700;
+  letter-spacing: .02em;
+}
 
-  &:hover,
-  &:focus {
-    transform: translateX(-50%) rotate(-3deg);
-  }
+.sugar-number {
+  display: block;
+  margin: 0;
+  font-family: $font-heading;
+  font-size: 5.5em;
+  font-weight: 700;
+  line-height: .7;
 }

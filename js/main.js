@@ -5,6 +5,7 @@ $(document).ready(function() {
 	 */
 	var totalGrams = 0;
 	var curPour = 0;
+	var totalPour = 0;
 	var maxPour = 12;
 	var totalFilled = 0;
 	var totalFilledMax = 6;
@@ -65,7 +66,7 @@ $(document).ready(function() {
 			$(".js-sugar-reveal").show();
 		}, 500);
 
-		$(".js-user-total").text(gramConverter((pourPercent * 3.4) + (totalFilled * 340)));
+		$(".js-user-total").text(totalPour);
 		$(".js-actual-total").text(gramConverter(totalGrams));
 
 		var demographics = getPercentages(gramConverter(totalGrams));
@@ -90,13 +91,14 @@ $(document).ready(function() {
 						"transform": "scaleY(" + curPour / maxPour + ")"
 					});
 
+					$(".js-measuring-quantity").text(totalPour);
+
 					if(curPour < maxPour){
 						curPour++;
+						totalPour++;
 					} else if (totalFilled < totalFilledMax){
 						totalFilled++;
 						curPour = 0;
-
-						//update beaker number shown each time beaker is filled
 					} else {
 						clearInterval(pourTimer);
 					}
