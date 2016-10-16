@@ -54,10 +54,11 @@
   transform-origin: bottom;
 }
 
-.stop-button {
+.start-stop-button {
   position: absolute;
   top: 1em;
   left: 50%;
+  width: 5em;
   transform: translateX(-50%);
 
   &:hover,

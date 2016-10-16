@@ -38,12 +38,22 @@ $(document).ready(function() {
 	 * "Page" navigation
 	 */
 	$(".js-estimate").click(function(){
+		if (totalGrams <= 0) {
+			$(".js-estimate-error").slideDown('fast');
+			return;
+		} else {
+			$(".js-estimate-error").hide();
+		}
+
 		$(".js-main").hide();
 		$(".js-estimating").show();
+	});
 
-		setTimeout(function() {
-			pourHandler();
-		}, 500);
+	$(".js-estimate-start").click(function(){
+		pourHandler();
+
+		$(this).hide();
+		$(".js-estimate-stop").show();
 	});
 
 	$(".js-estimate-stop").click(function(){
