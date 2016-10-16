@@ -17,7 +17,7 @@ $(document).ready(function() {
 	 * Increment / decrement logic
 	 */
 	$('.js-subtract').click(function(){
-		
+
 		var quantity = $(this).siblings(".js-quantity");
 		var num = parseInt(quantity.text());
 		if(num > 0){
@@ -27,7 +27,7 @@ $(document).ready(function() {
 	});
 
 	$('.js-add').click(function(){
-		
+
 		var quantity = $(this).siblings(".js-quantity");
 		var num = parseInt(quantity.text());
 		if(num < 10){
@@ -130,9 +130,9 @@ $(document).ready(function() {
 		var menMax = 9;
 
 		var demographics = {};
-		demographics.children = Math.floor(teaspoons / childrenMax * 100);
-		demographics.women = Math.floor(teaspoons / womenMax * 100);
-		demographics.men = Math.floor(teaspoons / menMax * 100);
+		demographics.children = Math.round(teaspoons / childrenMax * 100);
+		demographics.women = Math.round(teaspoons / womenMax * 100);
+		demographics.men = Math.round(teaspoons / menMax * 100);
 
 		return demographics;
 	};
