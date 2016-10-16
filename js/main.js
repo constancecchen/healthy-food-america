@@ -82,6 +82,28 @@ $(document).ready(function() {
 		}, 600);
 	});
 
+	$(".js-restart").click(function(event){
+		event.preventDefault();
+
+		// Reset vars
+		totalGrams = 0;
+		curPour = 0;
+		totalPour = 0;
+		totalFilled = 0;
+		isPouring = false;
+
+		// Reset various DOM elements
+		$(".js-quantity, .js-measuring-quantity").text("0");
+		$(".js-measuring-level").height(0);
+		$(".js-estimate-stop").hide();
+		$(".js-estimate-start").show();
+
+		// Back to the main page
+		$(".js-sugar-reveal").hide();
+		$(".js-main").show();
+		window.scrollTo(0, 0);
+	});
+
 	/**
 	 * Pouring logic
 	 */
