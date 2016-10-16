@@ -4,9 +4,9 @@ $(document).ready(function() {
 	 * Set up
 	 */
 	var totalGrams = 0;
-	var curPour = 0;
+	var curPour = 0;//Animation variable
+	var maxPour = 12;//Animation variable
 	var totalPour = 0;
-	var maxPour = 12;
 	var totalFilled = 0;
 	var totalFilledMax = 40;
 	var isPouring = false;
@@ -65,7 +65,7 @@ $(document).ready(function() {
 	$(".js-estimate-stop").click(function(){
 		pourHandler();
 
-		$(".js-sugar-reveal").children(".section-heading").text(gradeUser(totalPour));
+		$(".js-result-message").text(gradeUser(totalPour));
 
 		$(".js-user-total").text(totalPour);
 		$(".js-actual-total").text(gramConverter(totalGrams));
@@ -142,12 +142,13 @@ $(document).ready(function() {
 	*/
 	var gradeUser = function(guess){
 		
+		var actual = gramConverter(totalGrams);
 		var rankArr = ["Good guess!","Super close!","You got it!"];
 		var message;
 
-		if(Math.abs(guess - totalPour) > 5){
+		if(Math.abs(guess - actual) > 5){
 			message = rankArr[0];
-		} else if(Math.abs(guess - totalPour) > 0){
+		} else if(Math.abs(guess - actual) > 0){
 			message = rankArr[1];
 		} else {
 			message = rankArr[2];
