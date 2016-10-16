@@ -65,6 +65,8 @@ $(document).ready(function() {
 	$(".js-estimate-stop").click(function(){
 		pourHandler();
 
+		$(".js-sugar-reveal").children(".section-heading").text(gradeUser(totalPour));
+
 		$(".js-user-total").text(totalPour);
 		$(".js-actual-total").text(gramConverter(totalGrams));
 
@@ -135,4 +137,22 @@ $(document).ready(function() {
 
 		return demographics;
 	};
+	/**
+	 * Final grading math
+	*/
+	var gradeUser = function(guess){
+		
+		var rankArr = ["Good guess!","Super close!","You got it!"];
+		var message;
+
+		if(Math.abs(guess - totalPour) > 5){
+			message = rankArr[0];
+		} else if(Math.abs(guess - totalPour) > 0){
+			message = rankArr[1];
+		} else {
+			message = rankArr[2];
+		}
+
+		return message;
+	}
 });
