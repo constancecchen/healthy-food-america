@@ -3,10 +3,12 @@
 -----------------------------------------------*/
 .results-column {
   flex: 1 0 100%;
+  max-width: 100%;
   padding: 1.5em 1em;
 
   @media (min-width: $mq-xsmall) {
     flex-basis: 33.333333%;
+    max-width: 33.333333%; // IE 11 (https://github.com/philipwalton/flexbugs#7-flex-basis-doesnt-account-for-box-sizingborder-box)
   }
 }
 
