@@ -4,25 +4,39 @@
 @import "base/normalize";
 @import "base/media-queries";
 
-/*----------------------------------------------
-  Patterns
------------------------------------------------*/
-@import "patterns/colors";
-@import "patterns/typography";
-@import "patterns/layout";
-@import "patterns/forms";
-@import "patterns/buttons";
+// Add an ID  namespacing so we override HFA's default NationBuilder theme, and also don't cross-contaminate
+#sugar-calculator {
+  /*----------------------------------------------
+    Font base
+  -----------------------------------------------*/
+  $font-body:    "Sanchez", Georgia, serif;
+  $font-heading: "Passion One", Helvetica, Arial, sans-serif;
 
-/*----------------------------------------------
-  Sections / specific one-offs
------------------------------------------------*/
-@import "sections/header";
-@import "sections/footer";
-@import "sections/main";
-@import "sections/estimate";
-@import "sections/results";
+  font-family: $font-body;
+  font-size: 100%;
+  line-height: 1.5;
 
-/*----------------------------------------------
-  Utility classes
------------------------------------------------*/
-@import "base/utilities";
+  /*----------------------------------------------
+    Patterns
+  -----------------------------------------------*/
+  @import "patterns/colors";
+  @import "patterns/typography";
+  @import "patterns/layout";
+  @import "patterns/forms";
+  @import "patterns/buttons";
+
+  /*----------------------------------------------
+    Sections / specific one-offs
+  -----------------------------------------------*/
+  @import "sections/header";
+  @import "sections/footer";
+  @import "sections/main";
+  @import "sections/estimate";
+  @import "sections/results";
+
+  /*----------------------------------------------
+    Utility classes
+  -----------------------------------------------*/
+  @import "base/utilities";
+
+}

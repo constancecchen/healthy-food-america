@@ -1,18 +1,6 @@
 /*----------------------------------------------
-  Font Family variables
------------------------------------------------*/
-$font-body:    "Sanchez", Georgia, serif;
-$font-heading: "Passion One", Helvetica, Arial, sans-serif;
-
-/*----------------------------------------------
   Typography
 -----------------------------------------------*/
-body {
-  font-family: $font-body;
-  font-size: 100%;
-  line-height: 1.5;
-}
-
 h1, h2, h3, h4, h5, h6 {
   font-family: $font-heading;
   font-weight: 700;
