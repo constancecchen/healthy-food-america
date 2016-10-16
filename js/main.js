@@ -118,7 +118,7 @@ $(document).ready(function() {
 		return Math.floor(grams / gramsPerTeaspoon);
 	};
 
-	/*
+	/**
 	 * Demographic percentages
 	 * @param total teaspoons
 	 */
@@ -135,21 +135,24 @@ $(document).ready(function() {
 
 		return demographics;
 	};
+
 	/**
 	 * Final grading math
-	*/
+	 */
 	var gradeUser = function(guess){
 		
 		var actual = gramConverter(totalGrams);
-		var rankArr = ["Good guess!","Super close!","You got it!"];
+		var rankArr = ["Surprised?", "Good guess!", "Super close!", "You got it!"];
 		var message;
 
-		if(Math.abs(guess - actual) > 5){
+		if(Math.abs(guess - actual) > 10){
 			message = rankArr[0];
-		} else if(Math.abs(guess - actual) > 0){
+		} else if(Math.abs(guess - actual) > 5){
 			message = rankArr[1];
-		} else {
+		} else if(Math.abs(guess - actual) > 0){
 			message = rankArr[2];
+		} else {
+			message = rankArr[3];
 		}
 
 		return message;
