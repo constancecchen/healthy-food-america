@@ -232,16 +232,19 @@
 
 			<section class="u-display-none js-estimating">
 				<h2 class="section-heading">
-					Stop pouring when you think you're at your estimate!
+					Start pouring sugar, and hit stop when the amount in the container matches your guess!
 				</h2>
 
 				<div class="animation-container container">
 					<div class="pouring-container"></div>
 					<div class="measuring-container">
-							<div class=	"sugar js-measuring-level"></div>
+						<div class=	"sugar js-measuring-level"></div>
 					</div>
 
-					<button class="stop-button button button--big js-estimate-stop">
+					<button class="start-stop-button button button--big js-estimate-start">
+						Start!
+					</button>
+					<button class="start-stop-button button button--big js-estimate-stop u-display-none">
 						Stop!
 					</button>
 				</div>
@@ -252,7 +255,7 @@
 					Results
 				</h2>
 
-				<div class="sugar-count u-clearfix">
+				<div class="sugar-count flex">
 					<div class="user-total results-column">
 						<h3 class="sugar-count__heading">
 							You guessed:
@@ -280,11 +283,10 @@
 					What was the actual daily intake?
 				</h2>
 
-				<div class="daily-intake u-clearfix">
+				<div class="daily-intake flex">
 					<div class="child results-column">
 						<h3 class="daily-intake__heading">
-							<span class="js-child-intake">0</span>
-							<small>%</small>
+							<span class="js-child-intake">0</span><small>%</small>
 						</h3>
 						Max <strong>6</strong> teaspoons per day
 
@@ -295,8 +297,7 @@
 					</div>
 					<div class="woman results-column">
 						<h3 class="daily-intake__heading">
-							<span class="js-woman-intake">0</span>
-							<small>%</small>
+							<span class="js-woman-intake">0</span><small>%</small>
 						</h3>
 						Max <strong>6</strong> teaspoons per day
 						<img class="daily-intake__silhouette" src="images/woman.png" width="400" height="600" alt="">
@@ -306,8 +307,7 @@
 					</div>
 					<div class="man results-column">
 						<h3 class="daily-intake__heading">
-							<span class="js-man-intake">0</span>
-							<small>%</small>
+							<span class="js-man-intake">0</span><small>%</small>
 						</h3>
 						Max <strong>9</strong> teaspoons per day
 						<img class="daily-intake__silhouette" src="images/man.png" width="400" height="600" alt="">
@@ -324,14 +324,42 @@
 					Spread the word about sugar!
 				</h2>
 
-				<div class="share-cta u-clearfix">
+				<div class="final-cta flex">
+					<div class="sign-up final-cta__link results-column">
+						<h3 class="final-cta__header">
+							Sign Up
+						</h3>
+						<p>(TEMP: Email signup from NationBuilder will go here)</p>
+					</div>
+					<a class="follow final-cta__link results-column" href="http://www.healthyfoodamerica.org/sugar_advocacy_toolkit" target="_blank">
+						<h3 class="final-cta__header">
+							Learn More
+						</h3>
+						<p>Bring sugar back to healthy levels with our Sugar Advocacy Toolkit!</p>
+					</a>
+					<div class="share final-cta__link results-column">
+						<h3 class="final-cta__header">
+							Share This
+						</h3>
+						<a class="final-cta__fb-share" href="https://www.facebook.com/sharer/sharer.php?u=http://www.healthyfoodamerica.org/sugar_calculator" target="_blank">
+							<svg viewBox="0 0 16 16">
+								<path d="M15.117 0H.883C.395 0 0 .395 0 .883v14.234c0 .488.395.883.883.883h7.663V9.804H6.46V7.39h2.086V5.607c0-2.066 1.262-3.19 3.106-3.19.883 0 1.642.064 1.863.094v2.16h-1.28c-1 0-1.195.476-1.195 1.176v1.54h2.39l-.31 2.416h-2.08V16h4.077c.488 0 .883-.395.883-.883V.883C16 .395 15.605 0 15.117 0"/>
+								Share on Facebook
+							</svg>
+						</a>
+						<a class="final-cta__twitter-share" href="https://twitter.com/intent/tweet?text=Americans%20are%20awash%20in%20added%20sugar%3B%20see%20how%20quickly%20it%20adds%20up%20with%20our%20sugar%20calculator.%20http%3A%2F%2Fwww.healthyfoodamerica.org%2Fsugar_calculator" target="_blank">
+							<svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+								<path d="M16 3.038c-.59.26-1.22.437-1.885.517.677-.407 1.198-1.05 1.443-1.816-.634.375-1.337.648-2.085.795-.598-.638-1.45-1.036-2.396-1.036-1.812 0-3.282 1.468-3.282 3.28 0 .258.03.51.085.75C5.152 5.39 2.733 4.084 1.114 2.1.83 2.583.67 3.147.67 3.75c0 1.14.58 2.143 1.46 2.732-.538-.017-1.045-.165-1.487-.41v.04c0 1.59 1.13 2.918 2.633 3.22-.276.074-.566.114-.865.114-.21 0-.416-.02-.617-.058.418 1.304 1.63 2.253 3.067 2.28-1.124.88-2.54 1.404-4.077 1.404-.265 0-.526-.015-.783-.045 1.453.93 3.178 1.474 5.032 1.474 6.038 0 9.34-5 9.34-9.338 0-.143-.004-.284-.01-.425.64-.463 1.198-1.04 1.638-1.7z"/>
+							</svg>
+						</a>
+					</div>
 				</div>
 
 			</section>
 
 			<!-- Page Footer -->
 			<footer class="page-footer">
-				&copy; 2016 Healthy Food America / Created by Seattle GiveCamp 2016
+				&copy; 2016 <a href="http://www.healthyfoodamerica.org">Healthy Food America</a> / Created by <a href="http://www.seattlegivecamp.com">Seattle GiveCamp</a> 2016
 			</footer>
 		</div>
 

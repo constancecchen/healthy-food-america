@@ -2,9 +2,12 @@
   Results page
 -----------------------------------------------*/
 .results-column {
-  float: left;
-  width: 33.333333%;
+  flex: 1 0 100%;
   padding: 1.5em 1em;
+
+  @media (min-width: $mq-xsmall) {
+    flex-basis: 33.333333%;
+  }
 }
 
 /*----------------------------------------------
@@ -48,12 +51,10 @@
   color: $color-light;
   background-color: $color-tertiary;
 }
-
 .woman {
   color: $color-light;
   background-color: darken($color-tertiary, 5%);
 }
-
 .man {
   color: $color-light;
   background-color: darken($color-tertiary, 10%);
@@ -67,7 +68,69 @@
 
 .daily-intake__silhouette {
   display: block;
-  width: 70%;
+  width: 5em;
   margin: 1.5em auto 1em;
   height: auto;
+
+  @media (min-width: $mq-xsmall) {
+    width: 70%;
+  }
+}
+
+/*----------------------------------------------
+  Calls to Action
+-----------------------------------------------*/
+.sign-up {
+  padding: 3em 1em;
+  background-color: lighten($color-secondary, 20%);
+}
+.follow {
+  padding: 3em 1em;
+  background-color: lighten($color-secondary, 10%);
+}
+.share {
+  padding: 3em 1em;
+  background-color: $color-secondary;
+}
+
+.final-cta__link {
+  display: block;
+  transition: transform .3s ease-out;
+
+  &:hover,
+  &:focus {
+    transform: translateY(-.5em);
+  }
+}
+
+.final-cta__header {
+  font-family: $font-body;
+  font-size: 1.5em;
+  margin: .5em auto;
+}
+
+.final-cta__fb-share,
+.final-cta__twitter-share {
+  display: inline-block;
+  margin: .25em .5em;
+  padding: .75em 1em .4em;
+  color: $color-light;
+  transition: transform .3s ease-out;
+
+  &:hover,
+  &:focus {
+    transform: scale(1.1);
+  }
+
+  svg {
+    width: 1.5em;
+    height: 1.5em;
+    fill: currentColor;
+  }
+}
+.final-cta__fb-share {
+  background-color: $color-facebook;
+}
+.final-cta__twitter-share {
+  background-color: $color-twitter;
 }
