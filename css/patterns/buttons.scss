@@ -4,6 +4,7 @@
 // Reset buttons to look like text links unless given a specific class
 button, [type="submit"], [type="button"] {
   display: inline-block;
+  font-style: normal; // HFA override
   background-color: transparent;
   border: 0;
   padding: 0;
@@ -16,7 +17,6 @@ button, [type="submit"], [type="button"] {
   padding: .5em 1em;
   font-family: $font-heading;
   font-size: 2em;
-  font-style: normal; // HFA override
   font-weight: 700;
   letter-spacing: .05em;
   text-transform: uppercase;
