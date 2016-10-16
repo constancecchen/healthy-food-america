@@ -37,6 +37,8 @@ $(document).ready(function() {
 	/**
 	 * "Page" navigation
 	 */
+	pageTop = $("#sugar-calculator").offset().top;
+
 	$(".js-estimate").click(function() {
 		if (totalGrams <= 0) {
 			$(".js-estimate-error").slideDown("fast");
@@ -47,7 +49,7 @@ $(document).ready(function() {
 
 		$(".js-main").hide();
 		$(".js-estimating").show();
-		window.scrollTo(0, $("#sugar-calculator").offset().top);
+		window.scrollTo(0, pageTop);
 	});
 
 	$(".js-estimate-start").click(function() {
@@ -76,7 +78,7 @@ $(document).ready(function() {
 		setTimeout(function() {
 			$(".js-estimating").hide();
 			$(".js-sugar-reveal").show();
-			window.scrollTo(0, $("#sugar-calculator").offset().top);
+			window.scrollTo(0, pageTop);
 		}, 600);
 	});
 
@@ -99,7 +101,7 @@ $(document).ready(function() {
 		// Back to the main page
 		$(".js-sugar-reveal").hide();
 		$(".js-main").show();
-		window.scrollTo(0, 0);
+		window.scrollTo(0, pageTop);
 	});
 
 	/**
