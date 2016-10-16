@@ -4,7 +4,8 @@ $(document).ready(function() {
 	 * Set up
 	 */
 	var totalGrams = 0;
-	var pourPercent = 0;
+	var curPour = 0;
+	var maxPour = 12;
 	var totalFilled = 0;
 	var totalFilledMax = 6;
 	var isPouring = false;
@@ -81,25 +82,25 @@ $(document).ready(function() {
 			isPouring = false;
 			clearInterval(pourTimer);
 		} else {
-			if(pourPercent < 100){
+			if(curPour < maxPour){
 				isPouring = true;
 
 				pourTimer = setInterval(function(){
 					$(".js-measuring-level").css({
-						"transform": "scaleY(" + pourPercent / 100 + ")"
+						"transform": "scaleY(" + curPour / maxPour + ")"
 					});
 
-					if(pourPercent < 100){
-						pourPercent++;
+					if(curPour < maxPour){
+						curPour++;
 					} else if (totalFilled < totalFilledMax){
 						totalFilled++;
-						pourPercent = 0;
+						curPour = 0;
 
 						//update beaker number shown each time beaker is filled
 					} else {
 						clearInterval(pourTimer);
 					}
-				}, 250);
+				}, 500);
 			}
 		}
 	};
